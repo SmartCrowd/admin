@@ -66,7 +66,7 @@ class ModelConfiguration
 
 	public function edit($edit = null)
 	{
-		if ((func_num_args() == 0) || is_numeric($edit))
+		if ((func_num_args() == 0) || !is_callable($edit))
 		{
 			return $this->getEdit($edit);
 		}
@@ -83,7 +83,7 @@ class ModelConfiguration
 
 	public function delete($delete = null)
 	{
-		if ((func_num_args() == 0) || is_numeric($delete))
+		if ((func_num_args() == 0) || !is_callable($delete))
 		{
 			return $this->getDelete($delete);
 		}
@@ -93,7 +93,7 @@ class ModelConfiguration
 
 	public function restore($restore = null)
 	{
-		if ((func_num_args() == 0) || is_numeric($restore))
+		if ((func_num_args() == 0) || !is_callable($restore))
 		{
 			return $this->getRestore($restore);
 		}

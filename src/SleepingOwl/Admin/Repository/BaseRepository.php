@@ -128,12 +128,7 @@ class BaseRepository
 	 */
 	public function hasColumn($column)
 	{
-		$table = $this->model->getTable();
-		$columns = Cache::remember('admin.columns.' . $table, 60, function () use ($table)
-		{
-			return Schema::getColumnListing($table);
-		});
-		return array_search($column, $columns) !== false;
+        return true;
 	}
 
 }

@@ -46,7 +46,7 @@ class RouteServiceProvider extends ServiceProvider
 
 	protected function registerPatterns()
 	{
-		Route::pattern('adminModelId', '[0-9]+');
+		Route::pattern('adminModelId', '[0-9a-z]+');
 		Route::pattern('adminModel', implode('|', Admin::modelAliases()));
 		Route::bind('adminModel', function ($model)
 		{
